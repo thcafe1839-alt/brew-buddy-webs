@@ -1,6 +1,9 @@
 import { useState } from "react";
-import { Menu, X, Coffee } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import cafeLogo from "@/assets/cafe-logo.jpg";
+
+const BOOKING_URL = "https://book.squareup.com/appointments/y05wmv6jskjejk/location/LZ2ET42N7M0EA/services";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,10 +21,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2 group">
-            <Coffee className="w-7 h-7 text-accent transition-transform group-hover:rotate-12" />
-            <span className="font-serif text-xl md:text-2xl font-semibold text-foreground">
-              Aroma
-            </span>
+            <img 
+              src={cafeLogo} 
+              alt="The Cafe 1839 Hahndorf" 
+              className="h-12 md:h-14 w-auto"
+            />
           </a>
 
           {/* Desktop Navigation */}
@@ -39,8 +43,13 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button variant="default" size="sm" className="font-medium">
-              Order Now
+            <Button 
+              variant="default" 
+              size="sm" 
+              className="font-medium"
+              onClick={() => window.open(BOOKING_URL, '_blank')}
+            >
+              Book Now
             </Button>
           </div>
 
@@ -68,8 +77,13 @@ const Header = () => {
                   {link.name}
                 </a>
               ))}
-              <Button variant="default" size="sm" className="w-full mt-2">
-                Order Now
+              <Button 
+                variant="default" 
+                size="sm" 
+                className="w-full mt-2"
+                onClick={() => window.open(BOOKING_URL, '_blank')}
+              >
+                Book Now
               </Button>
             </nav>
           </div>

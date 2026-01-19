@@ -1,4 +1,7 @@
 import { MapPin, Clock, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const BOOKING_URL = "https://book.squareup.com/appointments/y05wmv6jskjejk/location/LZ2ET42N7M0EA/services";
 
 const VisitSection = () => {
   return (
@@ -11,13 +14,23 @@ const VisitSection = () => {
               Come Say Hello
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 leading-tight">
-              Visit Our <br />
-              <span className="italic">Cozy Corner</span>
+              Visit The Cafe <br />
+              <span className="italic">1839 Hahndorf</span>
             </h2>
             <p className="text-primary-foreground/70 mb-10 max-w-md leading-relaxed">
-              We'd love to welcome you! Stop by for your morning espresso, 
-              a leisurely afternoon latte, or simply to enjoy good company.
+              We'd love to welcome you! Stop by for your morning breakfast, 
+              a leisurely brunch, or simply to enjoy great coffee and good company.
             </p>
+
+            {/* Book Now Button */}
+            <Button 
+              variant="heroOutline" 
+              size="lg" 
+              className="mb-10"
+              onClick={() => window.open(BOOKING_URL, '_blank')}
+            >
+              Book a Table
+            </Button>
 
             {/* Contact Info */}
             <div className="space-y-6">
@@ -28,8 +41,8 @@ const VisitSection = () => {
                 <div>
                   <h3 className="font-medium mb-1">Location</h3>
                   <p className="text-primary-foreground/70 text-sm">
-                    123 Brewster Lane<br />
-                    Downtown District, NY 10001
+                    Main Street<br />
+                    Hahndorf, South Australia
                   </p>
                 </div>
               </div>
@@ -41,8 +54,8 @@ const VisitSection = () => {
                 <div>
                   <h3 className="font-medium mb-1">Hours</h3>
                   <p className="text-primary-foreground/70 text-sm">
-                    Mon - Fri: 7:00 AM - 7:00 PM<br />
-                    Sat - Sun: 8:00 AM - 8:00 PM
+                    Open Hours: 8am - 2pm<br />
+                    Breakfast: 8am - 12pm
                   </p>
                 </div>
               </div>
@@ -54,8 +67,7 @@ const VisitSection = () => {
                 <div>
                   <h3 className="font-medium mb-1">Contact</h3>
                   <p className="text-primary-foreground/70 text-sm">
-                    hello@aromacafe.com<br />
-                    (555) 123-4567
+                    info@cafe1839.com.au
                   </p>
                 </div>
               </div>
@@ -70,10 +82,10 @@ const VisitSection = () => {
                   <MapPin className="w-8 h-8 text-primary-foreground/60" />
                 </div>
                 <p className="text-primary-foreground/60 text-sm">
-                  Interactive map coming soon
+                  Find us in the heart of Hahndorf
                 </p>
                 <a 
-                  href="https://maps.google.com" 
+                  href="https://maps.google.com/maps?q=Hahndorf+South+Australia" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-block mt-4 text-sm font-medium text-primary-foreground hover:underline"

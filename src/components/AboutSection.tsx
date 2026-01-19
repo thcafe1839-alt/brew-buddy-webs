@@ -10,7 +10,7 @@ const AboutSection = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-warm-lg">
               <img
                 src={cafeInteriorImg}
-                alt="Cozy cafe interior with plants and warm lighting"
+                alt="The Cafe 1839 Hahndorf interior"
                 className="w-full aspect-[4/3] object-cover"
               />
             </div>
@@ -25,33 +25,35 @@ const AboutSection = () => {
               Our Story
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6 leading-tight">
-              More Than Just <br />
-              <span className="italic">a Coffee Shop</span>
+              A Taste of <br />
+              <span className="italic">Hahndorf Heritage</span>
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Founded in 2018, Aroma was born from a simple belief: great coffee brings people together. 
-                What started as a small corner shop has grown into a beloved community gathering space.
+                Nestled in the heart of Hahndorf, Australia's oldest surviving German settlement, 
+                The Cafe 1839 celebrates the rich heritage of this historic village while serving 
+                exceptional coffee and cuisine.
               </p>
               <p>
-                We source our beans directly from sustainable farms across Ethiopia, Colombia, and Guatemala. 
-                Each cup is crafted by our skilled baristas who share our passion for the perfect brew.
+                Our menu features locally sourced ingredients, house-made pastries, and specialty 
+                coffee crafted by our passionate baristas. Whether you're enjoying our famous 1839 
+                Breakky or a smooth flat white, every visit is a journey through taste and tradition.
               </p>
             </div>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 mt-10 pt-10 border-t border-border">
               <div>
-                <p className="font-serif text-3xl md:text-4xl font-semibold text-foreground">6+</p>
-                <p className="text-sm text-muted-foreground mt-1">Years Brewing</p>
+                <p className="font-serif text-3xl md:text-4xl font-semibold text-foreground">185+</p>
+                <p className="text-sm text-muted-foreground mt-1">Years of History</p>
               </div>
               <div>
-                <p className="font-serif text-3xl md:text-4xl font-semibold text-foreground">50k</p>
-                <p className="text-sm text-muted-foreground mt-1">Happy Customers</p>
+                <p className="font-serif text-3xl md:text-4xl font-semibold text-foreground">100%</p>
+                <p className="text-sm text-muted-foreground mt-1">Local Ingredients</p>
               </div>
               <div>
-                <p className="font-serif text-3xl md:text-4xl font-semibold text-foreground">12</p>
-                <p className="text-sm text-muted-foreground mt-1">Bean Origins</p>
+                <p className="font-serif text-3xl md:text-4xl font-semibold text-foreground">★★★★★</p>
+                <p className="text-sm text-muted-foreground mt-1">Customer Love</p>
               </div>
             </div>
           </div>
