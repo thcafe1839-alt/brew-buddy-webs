@@ -2,6 +2,8 @@ import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-cafe.jpg";
 
+const BOOKING_URL = "https://book.squareup.com/appointments/y05wmv6jskjejk/location/LZ2ET42N7M0EA/services";
+
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -9,7 +11,7 @@ const Hero = () => {
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Cozy cafe interior with barista crafting coffee"
+          alt="The Cafe 1839 Hahndorf - cozy cafe interior"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-hero-overlay" />
@@ -22,33 +24,37 @@ const Hero = () => {
             className="text-cream/80 text-sm md:text-base uppercase tracking-[0.3em] mb-6 opacity-0 animate-fade-in"
             style={{ animationDelay: "0.2s" }}
           >
-            Artisan Coffee • Fresh Pastries
+            Hahndorf's Finest • Est. 1839
           </p>
           
           <h1 
             className="font-serif text-4xl md:text-6xl lg:text-7xl font-semibold text-cream mb-6 leading-tight opacity-0 animate-fade-in"
             style={{ animationDelay: "0.4s" }}
           >
-            Where Every Cup <br />
-            <span className="italic">Tells a Story</span>
+            The Cafe 1839 <br />
+            <span className="italic">Hahndorf</span>
           </h1>
           
           <p 
             className="text-cream/80 text-lg md:text-xl max-w-xl mx-auto mb-10 opacity-0 animate-fade-in"
             style={{ animationDelay: "0.6s" }}
           >
-            Experience the warmth of handcrafted coffee in a space designed for connection.
+            Experience artisan coffee and delicious cuisine in the heart of Australia's oldest German settlement.
           </p>
           
           <div 
             className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-in"
             style={{ animationDelay: "0.8s" }}
           >
-            <Button variant="hero" size="lg">
-              Explore Menu
+            <Button 
+              variant="hero" 
+              size="lg"
+              onClick={() => window.open(BOOKING_URL, '_blank')}
+            >
+              Book Now
             </Button>
-            <Button variant="heroOutline" size="lg">
-              Find Us
+            <Button variant="heroOutline" size="lg" asChild>
+              <a href="#menu">View Menu</a>
             </Button>
           </div>
         </div>

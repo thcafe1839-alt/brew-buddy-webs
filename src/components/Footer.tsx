@@ -1,4 +1,5 @@
-import { Coffee, Instagram, Facebook, Twitter } from "lucide-react";
+import { Instagram, Facebook } from "lucide-react";
+import cafeLogo from "@/assets/cafe-logo.jpg";
 
 const Footer = () => {
   return (
@@ -7,10 +8,11 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2 group">
-            <Coffee className="w-6 h-6 text-accent transition-transform group-hover:rotate-12" />
-            <span className="font-serif text-xl font-semibold text-foreground">
-              Aroma
-            </span>
+            <img 
+              src={cafeLogo} 
+              alt="The Cafe 1839 Hahndorf" 
+              className="h-12 w-auto"
+            />
           </a>
 
           {/* Social Links */}
@@ -29,18 +31,11 @@ const Footer = () => {
             >
               <Facebook className="w-5 h-5" />
             </a>
-            <a
-              href="#"
-              className="text-muted-foreground hover:text-accent transition-colors"
-              aria-label="Twitter"
-            >
-              <Twitter className="w-5 h-5" />
-            </a>
           </div>
 
           {/* Copyright */}
           <p className="text-sm text-muted-foreground">
-            © 2024 Aroma Cafe. Made with ☕
+            © 2024 The Cafe 1839 Hahndorf. Made with ☕
           </p>
         </div>
       </div>
