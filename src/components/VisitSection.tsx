@@ -41,8 +41,8 @@ const VisitSection = () => {
                 <div>
                   <h3 className="font-medium mb-1">Location</h3>
                   <p className="text-primary-foreground/70 text-sm">
-                    Main Street<br />
-                    Hahndorf, South Australia
+                    Shop 3/56 Mount Barker Rd<br />
+                    Hahndorf SA 5245
                   </p>
                 </div>
               </div>
