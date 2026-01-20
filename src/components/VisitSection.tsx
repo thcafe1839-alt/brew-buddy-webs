@@ -74,25 +74,20 @@ const VisitSection = () => {
             </div>
           </div>
 
-          {/* Map Placeholder / Decorative Element */}
+          {/* Embedded Google Map */}
           <div className="relative">
-            <div className="w-full h-full min-h-[400px] rounded-2xl bg-primary-foreground/5 flex items-center justify-center border border-primary-foreground/10 overflow-hidden">
-              <div className="text-center px-8">
-                <div className="w-16 h-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto mb-4">
-                  <MapPin className="w-8 h-8 text-primary-foreground/60" />
-                </div>
-                <p className="text-primary-foreground/60 text-sm">
-                  Find us in the heart of Hahndorf
-                </p>
-                <a 
-                  href="https://maps.google.com/maps?q=Hahndorf+South+Australia" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-block mt-4 text-sm font-medium text-primary-foreground hover:underline"
-                >
-                  Open in Google Maps →
-                </a>
-              </div>
+            <div className="w-full h-full min-h-[400px] rounded-2xl overflow-hidden border border-primary-foreground/10">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3273.8!2d138.8075!3d-35.0283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ab735c9e5555555%3A0x0!2sShop%203%2F56%20Mount%20Barker%20Rd%2C%20Hahndorf%20SA%205245!5e0!3m2!1sen!2sau!4v1699999999999!5m2!1sen!2sau"
+                width="100%"
+                height="100%"
+                style={{ border: 0, minHeight: "400px" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="The Cafe 1839 Hahndorf Location"
+                className="grayscale hover:grayscale-0 transition-all duration-500"
+              />
             </div>
             {/* Decorative Elements */}
             <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-primary-foreground/5 rounded-2xl -z-10" />
