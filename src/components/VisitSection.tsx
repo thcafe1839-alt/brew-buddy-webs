@@ -74,21 +74,28 @@ const VisitSection = () => {
             </div>
           </div>
 
-          {/* Embedded Google Map */}
+          {/* Google Map Link */}
           <div className="relative">
-            <div className="w-full h-full min-h-[400px] rounded-2xl overflow-hidden border border-primary-foreground/10">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.5!2d138.8075!3d-35.0285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ab735c9e5555555%3A0x0!2sThe%20Cafe%201839%20Hahndorf!5e0!3m2!1sen!2sau"
-                width="100%"
-                height="100%"
-                style={{ border: 0, minHeight: "400px" }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="The Cafe 1839 Hahndorf Location"
-                className="grayscale hover:grayscale-0 transition-all duration-500"
-              />
-            </div>
+            <a 
+              href="https://maps.app.goo.gl/E8VKiXcbpgNLp8LD6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full h-full min-h-[400px] rounded-2xl overflow-hidden border border-primary-foreground/10 bg-primary-foreground/5 hover:bg-primary-foreground/10 transition-colors duration-300 group"
+            >
+              <div className="w-full h-full min-h-[400px] flex flex-col items-center justify-center text-center px-8">
+                <div className="w-20 h-20 rounded-full bg-primary-foreground/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <MapPin className="w-10 h-10 text-primary-foreground/80" />
+                </div>
+                <h3 className="font-serif text-2xl font-semibold mb-2">Find Us on Google Maps</h3>
+                <p className="text-primary-foreground/60 text-sm mb-4">
+                  Shop 3/56 Mount Barker Rd<br />
+                  Hahndorf SA 5245
+                </p>
+                <span className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground group-hover:underline">
+                  Open in Google Maps →
+                </span>
+              </div>
+            </a>
             {/* Decorative Elements */}
             <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-primary-foreground/5 rounded-2xl -z-10" />
           </div>
