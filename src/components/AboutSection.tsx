@@ -41,21 +41,6 @@ const AboutSection = () => {
               </p>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 mt-10 pt-10 border-t border-border">
-              <div>
-                <p className="font-serif text-3xl md:text-4xl font-semibold text-foreground">185+</p>
-                <p className="text-sm text-muted-foreground mt-1">Years of History</p>
-              </div>
-              <div>
-                <p className="font-serif text-3xl md:text-4xl font-semibold text-foreground">100%</p>
-                <p className="text-sm text-muted-foreground mt-1">Local Ingredients</p>
-              </div>
-              <div>
-                <p className="font-serif text-3xl md:text-4xl font-semibold text-foreground">★★★★★</p>
-                <p className="text-sm text-muted-foreground mt-1">Customer Love</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
