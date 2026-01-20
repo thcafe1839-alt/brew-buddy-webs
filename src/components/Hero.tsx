@@ -39,7 +39,7 @@ const Hero = () => {
             className="text-cream/80 text-lg md:text-xl max-w-xl mx-auto mb-10 opacity-0 animate-fade-in"
             style={{ animationDelay: "0.6s" }}
           >
-            Experience artisan coffee and delicious cuisine in the heart of Australia's oldest German settlement.
+            Service with Smile
           </p>
           
           <div 
