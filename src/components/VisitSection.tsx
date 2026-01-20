@@ -54,8 +54,7 @@ const VisitSection = () => {
                 <div>
                   <h3 className="font-medium mb-1">Hours</h3>
                   <p className="text-primary-foreground/70 text-sm">
-                    Open Hours: 8am - 2pm<br />
-                    Breakfast: 8am - 12pm
+                    8am - 2:30pm
                   </p>
                 </div>
               </div>
@@ -67,7 +66,8 @@ const VisitSection = () => {
                 <div>
                   <h3 className="font-medium mb-1">Contact</h3>
                   <p className="text-primary-foreground/70 text-sm">
-                    info@cafe1839.com.au
+                    0452 583 301<br />
+                    thecafe1839@gmail.com
                   </p>
                 </div>
               </div>
