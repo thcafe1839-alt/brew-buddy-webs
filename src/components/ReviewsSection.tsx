@@ -1,4 +1,5 @@
-import { Star } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const reviews = [
   {
@@ -22,11 +23,42 @@ const reviews = [
 ];
 
 const ReviewsSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  // Auto-rotate reviews every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
+  const handleNext = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev + 1) % reviews.length);
+      setIsAnimating(false);
+    }, 300);
+  };
+
+  const handlePrev = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
+      setIsAnimating(false);
+    }, 300);
+  };
+
+  const currentReview = reviews[currentIndex];
+
   return (
     <section className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <p className="text-accent text-sm uppercase tracking-[0.2em] mb-4">
             What People Say
           </p>
@@ -48,32 +80,77 @@ const ReviewsSection = () => {
           </a>
         </div>
 
-        {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {reviews.map((review, index) => (
+        {/* Single Review Display */}
+        <div className="max-w-2xl mx-auto">
+          <div className="relative">
+            {/* Navigation Buttons */}
+            <button
+              onClick={handlePrev}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 p-2 rounded-full bg-secondary hover:bg-secondary/80 text-foreground transition-colors z-10"
+              aria-label="Previous review"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={handleNext}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 p-2 rounded-full bg-secondary hover:bg-secondary/80 text-foreground transition-colors z-10"
+              aria-label="Next review"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+
+            {/* Review Card */}
             <div 
-              key={index}
-              className="bg-secondary/30 rounded-2xl p-8 border border-border hover:shadow-warm-lg transition-shadow duration-300"
+              className={`bg-secondary/30 rounded-2xl p-8 md:p-12 border border-border text-center transition-all duration-300 ${
+                isAnimating ? "opacity-0 scale-95" : "opacity-100 scale-100"
+              }`}
             >
               {/* Stars */}
-              <div className="flex gap-1 mb-4">
-                {[...Array(review.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-accent text-accent" />
+              <div className="flex justify-center gap-1 mb-6">
+                {[...Array(currentReview.rating)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-accent text-accent" />
                 ))}
               </div>
               
+              {/* Quote Icon */}
+              <div className="text-accent/30 text-6xl font-serif leading-none mb-4">"</div>
+              
               {/* Review Text */}
-              <p className="text-foreground leading-relaxed mb-6">
-                "{review.text}"
+              <p className="text-foreground text-lg md:text-xl leading-relaxed mb-8">
+                {currentReview.text}
               </p>
               
               {/* Author */}
-              <div className="flex items-center justify-between">
-                <p className="font-medium text-foreground">{review.name}</p>
-                <p className="text-sm text-muted-foreground">{review.date}</p>
+              <div>
+                <p className="font-semibold text-foreground text-lg">{currentReview.name}</p>
+                <p className="text-sm text-muted-foreground">{currentReview.date}</p>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Dots Indicator */}
+          <div className="flex justify-center gap-2 mt-8">
+            {reviews.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  if (!isAnimating && index !== currentIndex) {
+                    setIsAnimating(true);
+                    setTimeout(() => {
+                      setCurrentIndex(index);
+                      setIsAnimating(false);
+                    }, 300);
+                  }
+                }}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index === currentIndex 
+                    ? "bg-accent w-6" 
+                    : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                }`}
+                aria-label={`Go to review ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
