@@ -11,7 +11,7 @@ const reviews = [
   {
     name: "James L.",
     rating: 5,
-    text: "Best cafe in Hahndorf! The 1839 Breakky is incredible and the coffee is always perfect. Beautiful atmosphere and great service.",
+    text: "Best cafe in Hahndorf! The 1839 Feast is incredible and the coffee is always perfect. Beautiful atmosphere and great service.",
     date: "1 month ago"
   },
   {
@@ -19,6 +19,36 @@ const reviews = [
     rating: 5,
     text: "Such a cozy spot with delicious food. We had the eggs benedict and flat whites - both were exceptional. Will definitely be back!",
     date: "3 weeks ago"
+  },
+  {
+    name: "Michael T.",
+    rating: 5,
+    text: "Hidden gem in Hahndorf! The Shakshuka was absolutely divine and the coffee rivals any Melbourne cafe. Lovely rustic atmosphere with very attentive staff.",
+    date: "1 week ago"
+  },
+  {
+    name: "Lisa R.",
+    rating: 5,
+    text: "Perfect brunch spot! The Smashed Avo is loaded with flavour and the chai latte was creamy and delicious. Already planning our next visit!",
+    date: "4 days ago"
+  },
+  {
+    name: "David W.",
+    rating: 5,
+    text: "Outstanding food and service! The Triple Stack Pancakes were fluffy perfection. Great coffee, cozy vibes, and the friendliest team. Highly recommend!",
+    date: "5 days ago"
+  },
+  {
+    name: "Sophie H.",
+    rating: 5,
+    text: "What a find! Fresh, tasty food with generous portions. The Big Bruschetta was amazing. Love the warm, welcoming atmosphere of this cafe.",
+    date: "2 weeks ago"
+  },
+  {
+    name: "Chris B.",
+    rating: 5,
+    text: "Best breakfast in the Adelaide Hills! The Wafflicious is a must-try. Staff are lovely and the coffee is top-notch. Our new favourite cafe!",
+    date: "3 days ago"
   }
 ];
 
@@ -26,11 +56,11 @@ const ReviewsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // Auto-rotate reviews every 5 seconds
+  // Auto-rotate reviews every 2 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
-    }, 5000);
+    }, 2000);
     return () => clearInterval(interval);
   }, [currentIndex]);
 
