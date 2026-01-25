@@ -18,14 +18,18 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex items-center gap-6">
             <a
-              href="#"
+              href="https://www.instagram.com/thecafe1839"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-muted-foreground hover:text-accent transition-colors"
               aria-label="Instagram"
             >
               <Instagram className="w-5 h-5" />
             </a>
             <a
-              href="#"
+              href="https://www.facebook.com/share/1FWTm2GCJ9/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-muted-foreground hover:text-accent transition-colors"
               aria-label="Facebook"
             >
