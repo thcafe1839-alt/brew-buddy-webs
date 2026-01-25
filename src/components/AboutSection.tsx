@@ -36,15 +36,10 @@ const galleryImages = [
 
 const AboutSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
-        setIsAnimating(false);
-      }, 300);
+      setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
     }, 2000);
     return () => clearInterval(interval);
   }, []);
@@ -57,11 +52,10 @@ const AboutSection = () => {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-warm-lg">
               <img
+                key={currentIndex}
                 src={galleryImages[currentIndex]}
                 alt="The Cafe 1839 Hahndorf"
-                className={`w-full aspect-[4/3] object-cover transition-all duration-300 ${
-                  isAnimating ? "opacity-0 scale-95" : "opacity-100 scale-100"
-                }`}
+                className="w-full aspect-[4/3] object-cover animate-fade-in"
               />
             </div>
             {/* Image Dots Indicator */}
