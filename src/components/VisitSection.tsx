@@ -1,48 +1,9 @@
-import { useState, useEffect } from "react";
 import { MapPin, Clock, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
-import gallery5 from "@/assets/gallery-5.jpg";
-import gallery6 from "@/assets/gallery-6.jpg";
-import gallery7 from "@/assets/gallery-7.jpg";
-import gallery8 from "@/assets/gallery-8.jpg";
-import gallery9 from "@/assets/gallery-9.jpg";
-import gallery10 from "@/assets/gallery-10.jpg";
-
 const BOOKING_URL = "https://book.squareup.com/appointments/y05wmv6jskjejk/location/LZ2ET42N7M0EA/services";
 
-const galleryImages = [
-  gallery1,
-  gallery2,
-  gallery3,
-  gallery4,
-  gallery5,
-  gallery6,
-  gallery7,
-  gallery8,
-  gallery9,
-  gallery10,
-];
-
 const VisitSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
-        setIsAnimating(false);
-      }, 300);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section id="visit" className="py-24 md:py-32 bg-primary text-primary-foreground">
       <div className="container mx-auto px-6">
@@ -113,32 +74,28 @@ const VisitSection = () => {
             </div>
           </div>
 
-          {/* Photo Gallery */}
+          {/* Google Map Link */}
           <div className="relative">
-            <div className="w-full h-full min-h-[400px] rounded-2xl overflow-hidden border border-primary-foreground/10">
-              <img
-                src={galleryImages[currentIndex]}
-                alt="The Cafe 1839 gallery"
-                className={`w-full h-full min-h-[400px] object-cover transition-all duration-300 ${
-                  isAnimating ? "opacity-0 scale-95" : "opacity-100 scale-100"
-                }`}
-              />
-            </div>
-            {/* Image Dots Indicator */}
-            <div className="flex justify-center gap-2 mt-4">
-              {galleryImages.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    index === currentIndex 
-                      ? "bg-primary-foreground w-6" 
-                      : "bg-primary-foreground/30 hover:bg-primary-foreground/50"
-                  }`}
-                  aria-label={`Go to image ${index + 1}`}
-                />
-              ))}
-            </div>
+            <a 
+              href="https://maps.app.goo.gl/E8VKiXcbpgNLp8LD6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full h-full min-h-[400px] rounded-2xl overflow-hidden border border-primary-foreground/10 bg-primary-foreground/5 hover:bg-primary-foreground/10 transition-colors duration-300 group"
+            >
+              <div className="w-full h-full min-h-[400px] flex flex-col items-center justify-center text-center px-8">
+                <div className="w-20 h-20 rounded-full bg-primary-foreground/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <MapPin className="w-10 h-10 text-primary-foreground/80" />
+                </div>
+                <h3 className="font-serif text-2xl font-semibold mb-2">Find Us on Google Maps</h3>
+                <p className="text-primary-foreground/60 text-sm mb-4">
+                  Shop 3/56 Mount Barker Rd<br />
+                  Hahndorf SA 5245
+                </p>
+                <span className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground group-hover:underline">
+                  Open in Google Maps →
+                </span>
+              </div>
+            </a>
             {/* Decorative Elements */}
             <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-primary-foreground/5 rounded-2xl -z-10" />
           </div>

@@ -1,18 +1,73 @@
-import cafeInteriorImg from "@/assets/cafe-interior.jpg";
+import { useState, useEffect } from "react";
+
+import gallery1 from "@/assets/gallery-1.jpg";
+import gallery2 from "@/assets/gallery-2.jpg";
+import gallery3 from "@/assets/gallery-3.jpg";
+import gallery4 from "@/assets/gallery-4.jpg";
+import gallery5 from "@/assets/gallery-5.jpg";
+import gallery6 from "@/assets/gallery-6.jpg";
+import gallery7 from "@/assets/gallery-7.jpg";
+import gallery8 from "@/assets/gallery-8.jpg";
+import gallery9 from "@/assets/gallery-9.jpg";
+import gallery10 from "@/assets/gallery-10.jpg";
+
+const galleryImages = [
+  gallery1,
+  gallery2,
+  gallery3,
+  gallery4,
+  gallery5,
+  gallery6,
+  gallery7,
+  gallery8,
+  gallery9,
+  gallery10,
+];
 
 const AboutSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
+        setIsAnimating(false);
+      }, 300);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="about" className="py-24 md:py-32 bg-secondary/30">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image */}
+          {/* Image Gallery */}
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-warm-lg">
               <img
-                src={cafeInteriorImg}
-                alt="The Cafe 1839 Hahndorf interior"
-                className="w-full aspect-[4/3] object-cover"
+                src={galleryImages[currentIndex]}
+                alt="The Cafe 1839 Hahndorf"
+                className={`w-full aspect-[4/3] object-cover transition-all duration-300 ${
+                  isAnimating ? "opacity-0 scale-95" : "opacity-100 scale-100"
+                }`}
               />
+            </div>
+            {/* Image Dots Indicator */}
+            <div className="flex justify-center gap-2 mt-4">
+              {galleryImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    index === currentIndex 
+                      ? "bg-accent w-6" 
+                      : "bg-accent/30 hover:bg-accent/50"
+                  }`}
+                  aria-label={`Go to image ${index + 1}`}
+                />
+              ))}
             </div>
             {/* Decorative Element */}
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-accent/10 rounded-2xl -z-10" />
