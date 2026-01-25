@@ -10,6 +10,11 @@ import gallery7 from "@/assets/gallery-7.jpg";
 import gallery8 from "@/assets/gallery-8.jpg";
 import gallery9 from "@/assets/gallery-9.jpg";
 import gallery10 from "@/assets/gallery-10.jpg";
+import gallery11 from "@/assets/gallery-11.jpg";
+import gallery12 from "@/assets/gallery-12.jpg";
+import gallery13 from "@/assets/gallery-13.jpg";
+import gallery14 from "@/assets/gallery-14.jpg";
+import gallery15 from "@/assets/gallery-15.jpg";
 
 const galleryImages = [
   gallery1,
@@ -22,6 +27,11 @@ const galleryImages = [
   gallery8,
   gallery9,
   gallery10,
+  gallery11,
+  gallery12,
+  gallery13,
+  gallery14,
+  gallery15,
 ];
 
 const AboutSection = () => {
