@@ -54,7 +54,8 @@ const VisitSection = () => {
                 <div>
                   <h3 className="font-medium mb-1">Hours</h3>
                   <p className="text-primary-foreground/70 text-sm">
-                    8am - 2:30pm
+                    Open: 8am - 3pm<br />
+                    Kitchen: 8:30am - 2:30pm
                   </p>
                 </div>
               </div>
