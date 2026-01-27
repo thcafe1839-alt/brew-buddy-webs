@@ -450,7 +450,7 @@ const MenuSection = () => {
             Food & Beverages
           </h2>
           <p className="text-muted-foreground max-w-md mx-auto mb-8">
-            Crafted with passion, served with love. Available 8am - 2:30pm.
+            Crafted with passion, served with love. Available 8am - 3pm.
           </p>
 
           {/* Category Tabs */}
