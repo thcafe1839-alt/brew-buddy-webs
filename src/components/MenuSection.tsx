@@ -60,8 +60,13 @@ const foodMenu: MenuSubcategory[] = [
     title: "Sweet Treats",
     items: [
       {
-        name: "Triple Stack Pancake",
-        description: "Choose: 1) Lotus Biscoff with seasonal berries & banana, or 2) Bacon with maple syrup. +add vanilla ice-cream ($3)",
+        name: "Triple Stack Pancake - Biscoff & Berries",
+        description: "Fluffy pancakes with seasonal berries, banana & lotus biscoff. +add vanilla ice-cream ($3)",
+        price: "$19.90"
+      },
+      {
+        name: "Triple Stack Pancake - Bacon & Maple",
+        description: "Fluffy pancakes with crispy bacon and maple syrup. +add vanilla ice-cream ($3)",
         price: "$19.90"
       },
       {
