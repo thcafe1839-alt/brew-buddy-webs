@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { UtensilsCrossed, Coffee } from "lucide-react";
+import { UtensilsCrossed, Coffee, Cake } from "lucide-react";
 
-type MenuCategory = "food" | "beverage";
+type MenuCategory = "food" | "beverage" | "cakes";
 
 interface MenuItem {
   name: string;
@@ -286,7 +286,7 @@ const foodMenu: MenuSubcategory[] = [
   }
 ];
 
-const beverageMenu: MenuSubcategory[] = [
+const cakesMenu: MenuSubcategory[] = [
   {
     title: "Cakes & Pastries",
     items: [
@@ -301,7 +301,10 @@ const beverageMenu: MenuSubcategory[] = [
       { name: "Almond Croissant", price: "$8.90" },
       { name: "Assorted Cheesecake", price: "$6.90" }
     ]
-  },
+  }
+];
+
+const beverageMenu: MenuSubcategory[] = [
   {
     title: "Coffee",
     note: "Extra shot, decaf, all alternative milks, any syrups add ons ($1.0)",
@@ -451,7 +454,10 @@ const beverageMenu: MenuSubcategory[] = [
 
 const MenuSection = () => {
   const [activeCategory, setActiveCategory] = useState<MenuCategory>("food");
-  const currentMenu = activeCategory === "food" ? foodMenu : beverageMenu;
+  const currentMenu = 
+    activeCategory === "food" ? foodMenu : 
+    activeCategory === "beverage" ? beverageMenu : 
+    cakesMenu;
 
   return (
     <section id="menu" className="py-24 md:py-32 bg-background">
@@ -469,28 +475,39 @@ const MenuSection = () => {
           </p>
 
           {/* Category Tabs */}
-          <div className="flex justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-3">
             <button
               onClick={() => setActiveCategory("food")}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all ${
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all ${
                 activeCategory === "food"
                   ? "bg-primary text-primary-foreground shadow-lg"
                   : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
               }`}
             >
               <UtensilsCrossed className="w-4 h-4" />
-              Food Menu
+              Food
             </button>
             <button
               onClick={() => setActiveCategory("beverage")}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all ${
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all ${
                 activeCategory === "beverage"
                   ? "bg-primary text-primary-foreground shadow-lg"
                   : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
               }`}
             >
               <Coffee className="w-4 h-4" />
-              Drinks Menu
+              Drinks
+            </button>
+            <button
+              onClick={() => setActiveCategory("cakes")}
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all ${
+                activeCategory === "cakes"
+                  ? "bg-primary text-primary-foreground shadow-lg"
+                  : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+              }`}
+            >
+              <Cake className="w-4 h-4" />
+              Cakes & Pastries
             </button>
           </div>
         </div>
