@@ -288,6 +288,21 @@ const foodMenu: MenuSubcategory[] = [
 
 const beverageMenu: MenuSubcategory[] = [
   {
+    title: "Cakes & Pastries",
+    items: [
+      { name: "Portuguese Tart", price: "$4.20" },
+      { name: "Chocolate Muffin", price: "$4.90" },
+      { name: "Blueberry Muffin", price: "$4.90" },
+      { name: "Chocolate Brownie (GF)", price: "$5.00" },
+      { name: "Caramel Slice (GF)", price: "$6.90" },
+      { name: "Carrot Cake", price: "$6.90" },
+      { name: "Hummingbird Cake", price: "$6.90" },
+      { name: "Plain Croissant", price: "$5.50" },
+      { name: "Almond Croissant", price: "$8.90" },
+      { name: "Assorted Cheesecake", price: "$6.90" }
+    ]
+  },
+  {
     title: "Coffee",
     note: "Extra shot, decaf, all alternative milks, any syrups add ons ($1.0)",
     items: [
