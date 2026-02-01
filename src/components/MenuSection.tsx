@@ -340,11 +340,20 @@ const beverageMenu: MenuSubcategory[] = [{
     name: "Iced Coffee",
     price: "$7.50"
   }, {
+    name: "Iced Biscoff Latte",
+    price: "$7.50"
+  }, {
     name: "Iced Mocha",
     price: "$7.90"
   }, {
     name: "Iced Dirty Chai",
     price: "$7.90"
+  }, {
+    name: "Iced Matcha Latte",
+    price: "$7.90"
+  }, {
+    name: "Iced Strawberry Matcha",
+    price: "$8.50"
   }]
 }, {
   title: "Non-Coffee",
