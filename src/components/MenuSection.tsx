@@ -297,7 +297,7 @@ const cakesMenu: MenuSubcategory[] = [
       { name: "Caramel Slice (GF)", price: "$6.90" },
       { name: "Carrot Cake", price: "$6.90" },
       { name: "Hummingbird Cake", price: "$6.90" },
-      { name: "Plain Croissant", price: "$5.50" },
+      { name: "Plain Croissant", price: "$9.50" },
       { name: "Almond Croissant", price: "$8.90" },
       { name: "Assorted Cheesecake", price: "$6.90" }
     ]
