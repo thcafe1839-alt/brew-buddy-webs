@@ -56,8 +56,7 @@ const foodMenu: MenuSubcategory[] = [{
   }, {
     name: "Wafflicious",
     description: "Authentic Belgian waffles, fresh seasonal berries, walnuts and vanilla ice-cream with choice of sauce (maple/chocolate/caramel)",
-    price: "$19.90",
-    tag: "House Made"
+    price: "$19.90"
   }]
 }, {
   title: "Signature Dishes",
