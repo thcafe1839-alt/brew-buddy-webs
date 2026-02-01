@@ -413,7 +413,7 @@ const beverageMenu: MenuSubcategory[] = [{
   }]
 }, {
   title: "Tea",
-  note: "Cup $4.00 / Pot $5.00",
+  note: "Cup $4.00 / Mug $4.50 / Pot $5.00",
   items: [{
     name: "English Breakfast",
     price: ""
