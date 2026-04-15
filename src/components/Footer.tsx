@@ -10,10 +10,17 @@ const Footer = () => {
           <a href="#home" className="flex items-center gap-2 group">
             <img 
               src={cafeLogo} 
-              alt="The Cafe 1839 Hahndorf" 
+              alt="The Cafe 1839 — Best Cafe in Hahndorf SA" 
               className="h-12 w-auto"
             />
           </a>
+
+          {/* NAP - Name Address Phone for Local SEO */}
+          <address className="not-italic text-center text-sm text-muted-foreground leading-relaxed">
+            <strong>The Cafe 1839 Hahndorf</strong><br />
+            Shop 3/56 Mount Barker Rd, Hahndorf SA 5245<br />
+            <a href="tel:+61452583301" className="hover:text-foreground transition-colors">0452 583 301</a> · <a href="mailto:thecafe1839@gmail.com" className="hover:text-foreground transition-colors">thecafe1839@gmail.com</a>
+          </address>
 
           {/* Social Links */}
           <div className="flex items-center gap-6">
@@ -22,7 +29,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-accent transition-colors"
-              aria-label="Instagram"
+              aria-label="The Cafe 1839 Hahndorf on Instagram"
             >
               <Instagram className="w-5 h-5" />
             </a>
@@ -31,17 +38,17 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-accent transition-colors"
-              aria-label="Facebook"
+              aria-label="The Cafe 1839 Hahndorf on Facebook"
             >
               <Facebook className="w-5 h-5" />
             </a>
           </div>
-
-          {/* Copyright */}
-          <p className="text-sm text-muted-foreground">
-            © 2024 The Cafe 1839 Hahndorf. Made with ☕
-          </p>
         </div>
+
+        {/* Copyright */}
+        <p className="text-center text-xs text-muted-foreground mt-8">
+          © 2024 The Cafe 1839 Hahndorf. Made with ☕
+        </p>
       </div>
     </footer>
   );

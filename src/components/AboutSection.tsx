@@ -84,19 +84,19 @@ const AboutSection = () => {
               Our Story
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6 leading-tight">
-              A Taste of <br />
-              <span className="italic">Hahndorf Heritage</span>
+              Cafe 1839 — <br />
+              <span className="italic">Hahndorf's Favourite</span>
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Nestled in the heart of Hahndorf, Australia's oldest surviving German settlement, 
-                The Cafe 1839 celebrates the rich heritage of this historic village while serving 
-                exceptional coffee and cuisine.
+                Nestled in the heart of <strong>Hahndorf</strong>, Australia's oldest surviving German settlement, 
+                <strong>The Cafe 1839</strong> celebrates the rich heritage of this historic village while serving 
+                exceptional coffee and cuisine on <strong>Mount Barker Road</strong>.
               </p>
               <p>
                 Our menu features locally sourced ingredients and specialty 
                 coffee crafted by our passionate baristas. Whether you're enjoying our famous 1839 
-                Breakky or a smooth flat white, every visit is a journey through taste and tradition.
+                Breakky or a smooth flat white, every visit to our <strong>Hahndorf cafe</strong> is a journey through taste and tradition.
               </p>
             </div>
 
