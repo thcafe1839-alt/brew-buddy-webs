@@ -13,6 +13,8 @@ const Hero = () => {
           src={heroImage}
           alt="The Cafe 1839 Hahndorf - cozy cafe interior"
           className="w-full h-full object-cover"
+          loading="eager"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-hero-overlay" />
       </div>
