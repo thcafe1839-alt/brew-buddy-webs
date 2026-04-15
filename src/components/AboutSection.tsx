@@ -94,7 +94,7 @@ const AboutSection = () => {
                 exceptional coffee and cuisine.
               </p>
               <p>
-                Our menu features locally sourced ingredients, house-made pastries, and specialty 
+                Our menu features locally sourced ingredients and specialty 
                 coffee crafted by our passionate baristas. Whether you're enjoying our famous 1839 
                 Breakky or a smooth flat white, every visit is a journey through taste and tradition.
               </p>
