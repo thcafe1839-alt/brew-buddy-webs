@@ -23,7 +23,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <p 
-            className="text-cream/80 md:text-base uppercase tracking-[0.3em] mb-6 opacity-0 animate-fade-in font-serif text-2xl"
+            className="text-cream/80 md:text-base uppercase tracking-[0.3em] mb-6 opacity-0 animate-fade-in font-serif font-medium text-3xl"
             style={{ animationDelay: "0.2s" }}
           >
             HAHNDORF'S FINEST 
